@@ -1,6 +1,6 @@
-# My Web Page
+## My Web Page
 
-- https://kanhaojun.github.io/index.html
+- https://kanhaojun.github.io/
 
 ## Reference
 
