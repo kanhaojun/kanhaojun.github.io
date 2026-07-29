@@ -588,6 +588,88 @@ body.intro-page {
 	word-break: break-all;
 }
 
+/* ── Resume Download ── */
+.section__desc {
+	max-width: 52ch;
+	color: var(--text-muted);
+	margin: -1.5rem 0 2rem;
+	font-size: 0.95rem;
+}
+
+.resume-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+	gap: 1.25rem;
+	max-width: 720px;
+}
+
+.resume-card {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	background: var(--bg-elevated);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 1.75rem;
+	text-decoration: none;
+	color: var(--text);
+	box-shadow: var(--shadow);
+	transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.resume-card:hover {
+	transform: translateY(-3px);
+	box-shadow: var(--shadow-lg);
+	border-color: var(--accent);
+}
+
+.resume-card.is-active {
+	border-color: var(--accent);
+	background: linear-gradient(180deg, var(--accent-soft) 0%, var(--bg-elevated) 100%);
+}
+
+.resume-card__icon {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+	line-height: 1;
+}
+
+.resume-card h3 {
+	font-size: 1.05rem;
+	font-weight: 700;
+	margin: 0 0 0.35rem;
+}
+
+.resume-card p {
+	font-size: 0.85rem;
+	color: var(--text-muted);
+	margin: 0 0 1.25rem;
+}
+
+.resume-card__btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin-top: auto;
+	padding: 0.55rem 1rem;
+	border-radius: 999px;
+	background: var(--accent-soft);
+	color: var(--accent);
+	font-size: 0.85rem;
+	font-weight: 700;
+	transition: background var(--transition), color var(--transition);
+}
+
+.resume-card__btn::after {
+	content: "↓";
+	font-size: 0.9rem;
+}
+
+.resume-card:hover .resume-card__btn {
+	background: var(--accent);
+	color: #fff;
+}
+
 /* ── Footer ── */
 .intro-footer {
 	text-align: center;
@@ -637,6 +719,10 @@ body.intro-page {
 	}
 
 	.contact-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.resume-grid {
 		grid-template-columns: 1fr;
 	}
 }

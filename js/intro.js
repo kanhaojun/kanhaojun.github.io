@@ -6,6 +6,7 @@
 			navAbout: '關於',
 			navSkills: '技能',
 			navExperience: '經歷',
+			navResume: '履歷',
 			navContact: '聯絡',
 			navCv: '履歷',
 			badge: '就讀中原大學碩士班',
@@ -43,6 +44,16 @@
 			exp4Date: '2021 – 2022',
 			exp4Title: '兵役 · 二兵',
 			exp4Desc: 'Compulsory Military Service',
+			resumeLabel: '履歷下載',
+			resumeTitle: 'PDF 履歷',
+			resumeDesc: '選擇語言版本下載 PDF 履歷，內容與網站履歷頁同步更新。',
+			resumeTwTitle: '繁體中文履歷',
+			resumeTwDesc: 'Traditional Chinese · PDF',
+			resumeCnTitle: '简体中文简历',
+			resumeCnDesc: 'Simplified Chinese · PDF',
+			resumeEnTitle: 'English Resume',
+			resumeEnDesc: 'English · PDF',
+			resumeDownload: '下載 PDF',
 			contactLabel: '聯絡方式',
 			contactTitle: '保持聯繫',
 			contactEmail: '電子郵件',
@@ -59,6 +70,7 @@
 			navAbout: '关于',
 			navSkills: '技能',
 			navExperience: '经历',
+			navResume: '简历',
 			navContact: '联系',
 			navCv: '简历',
 			badge: '就读中原大学硕士班',
@@ -96,6 +108,16 @@
 			exp4Date: '2021 – 2022',
 			exp4Title: '兵役 · 二兵',
 			exp4Desc: 'Compulsory Military Service',
+			resumeLabel: '简历下载',
+			resumeTitle: 'PDF 简历',
+			resumeDesc: '选择语言版本下载 PDF 简历，内容与网站简历页同步更新。',
+			resumeTwTitle: '繁体中文简历',
+			resumeTwDesc: 'Traditional Chinese · PDF',
+			resumeCnTitle: '简体中文简历',
+			resumeCnDesc: 'Simplified Chinese · PDF',
+			resumeEnTitle: 'English Resume',
+			resumeEnDesc: 'English · PDF',
+			resumeDownload: '下载 PDF',
 			contactLabel: '联系方式',
 			contactTitle: '保持联系',
 			contactEmail: '电子邮件',
@@ -112,6 +134,7 @@
 			navAbout: 'About',
 			navSkills: 'Skills',
 			navExperience: 'Experience',
+			navResume: 'Resume',
 			navContact: 'Contact',
 			navCv: 'CV',
 			badge: 'Graduate Student at CYCU',
@@ -149,6 +172,16 @@
 			exp4Date: '2021 – 2022',
 			exp4Title: 'Military Service',
 			exp4Desc: 'Compulsory Military Service, Private Second Class',
+			resumeLabel: 'Resume Download',
+			resumeTitle: 'PDF Resume',
+			resumeDesc: 'Download a PDF resume in your preferred language. Content matches the online CV pages.',
+			resumeTwTitle: 'Traditional Chinese',
+			resumeTwDesc: 'Traditional Chinese · PDF',
+			resumeCnTitle: 'Simplified Chinese',
+			resumeCnDesc: 'Simplified Chinese · PDF',
+			resumeEnTitle: 'English Resume',
+			resumeEnDesc: 'English · PDF',
+			resumeDownload: 'Download PDF',
 			contactLabel: 'Get in Touch',
 			contactTitle: 'Contact',
 			contactEmail: 'Email',
@@ -186,6 +219,10 @@
 		if (cvLink) cvLink.href = cvLinks[lang];
 		if (footerCv) footerCv.href = cvLinks[lang];
 		if (heroCv) heroCv.href = cvLinks[lang];
+		document.querySelectorAll('.resume-card').forEach(function (card) {
+			var cardLang = card.getAttribute('data-lang');
+			card.classList.toggle('is-active', cardLang === lang || (lang === 'cn' && cardLang === 'tw'));
+		});
 	}
 
 	function applyTheme(theme) {
